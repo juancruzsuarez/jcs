@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practica_2._23
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+            bool primo = false;
+            Console.WriteLine("Por favor ingrese un numero:");
+            int numero = Convert.ToInt32(Console.ReadLine());
+            for (i = 1; i <= numero; i++)
+            {
+                EsPrimo(ref primo, numero);
+                if (primo == true)
+                {
+                    Console.WriteLine("El numero" + numero + "es primo");
+                }
+            }
+        }
+
+        private static bool EsPrimo(ref bool primo, int numero)
+        {
+            int i;
+            double raiz = Math.Sqrt(numero);
+            for (i = 2; i <= raiz; i++)
+            {
+                if (numero % i == 0)
+                {
+                    primo = true;
+                }
+                else
+                {
+                    primo = false;
+                }
+
+                Console.WriteLine(i);
+            }
+
+        }
+
+
+    }
+}
